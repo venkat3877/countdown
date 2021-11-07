@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown</title>
+    <style>
+      body {
+        margin: 0;
+        text-align: center;
+        background-color: cornsilk;
+      }
+      input,
+      button {
+        text-align: center;
+        width: 300px;
+        font-size: 25px;
+      }
+      #tex{
+        font-size: 50px;
+        font-style: italic;
+      }
+      #min,#sec{
+        
+        width: 110px;
+        font-size: 25px;
+        margin-top: 10px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Countdown Timer</h1>
+    <p id ="tex">Enter the time in minutes</p>
+    <input id="Seconds" type="number" placeholder="Seconds" />
+    <button id="startbtn" onclick="time()">Start</button>
+    <br>
+    <div>
+    <input id="min" type="number" placeholder="minutes" disabled />
+    <p>Minutes</p>
+    <input id="sec" type="number" placeholder="Seconds" disabled/>
+    <p>Seconds</p>
+    <script>
+      function time() {
+        let input = document.getElementById("Seconds").value;
+        sec=input;
+        seconds=Number(sec)%60;
+        minutes=Number(input)-seconds;
+        minutes=minutes/60
+        time=document.getElementById("min")
+        time.value=minutes
+        time=document.getElementById("sec")
+        time.value=seconds
+      }
+    </script>
+  </body>
+</html>
